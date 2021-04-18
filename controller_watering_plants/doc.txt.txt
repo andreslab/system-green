@@ -1,0 +1,24 @@
+pip install esptool     ///instala esptool que ayuda a flashear el dispotivo esp8266 o esp32
+esptool.py –-port COM6 erase_flash      //flashea el dispositvo
+descargar firmare segun el modelo https://micropython.org/download/
+esptool.py --port com6 --baud 460800 write_flash --flash_size=detect -fm dio 0 "nombre archivo" ////carga el nuevo firmware del esp8266 o esp32, tamb se puede cambiar la velocidad de baud a 115200
+
+pip install adafruit-ampy   ////instala adafruit-ampy para compilar en el dispositivo
+pip install adafruit-ampy --upgrade ////verifica actualizaciones
+ampy --port COM6 run .\blink.p ////arranca el codigo en el esp8266 o esp32
+
+
+PARA UN POYECTO  USAR boot.py (valores de configuracion del proyecto) y main.py(codigo principal del proyecto), ambos archivos se agragan al esp8266 o esp32 con
+amp --port COM6 put .\boot.py
+amp --port COM6 put .\main.py
+y luego ejecuta el main
+amp --port COM6 run .\main.py
+o si no esta conectado a la maquina presionar rst en el esp8266 o esp32
+/////////////////////////////////////
+
+ssid UNE4GLTE35
+pass 4glte006635
+
+
+/////////////////////////////////////
+
